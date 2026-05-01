@@ -72,10 +72,6 @@ The PS5 woke up when paged from that address, confirming the new BD_ADDR is used
 | RTL8761B, RTL8723D, RTL8821C | 0x0044 | confirmed (documented elsewhere) |
 | RTL8723B, RTL8761A | 0x003C | confirmed (documented elsewhere) |
 
-## Limitations
-
-This only wakes the PS5. Full controller emulation is blocked by Sony's HID auth challenge (reports 0xF0 / 0xF1 / 0xF2) which requires the DualSense auth IC to sign. That is a separate unsolved problem and out of scope here.
-
 ## Links
 
 - [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXonbt), the original PS5/PS4 wake tool, works on Broadcom and Intel
