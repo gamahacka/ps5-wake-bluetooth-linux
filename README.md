@@ -6,7 +6,7 @@ The trick is documented in [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXo
 
 ## What you need
 
-- A Linux machine with a Realtek Bluetooth adapter (see compatibility table below)
+- A Linux machine with a Bluetooth adapter that supports BD_ADDR spoofing
 - The Bluetooth MAC of your PS5 and the MAC of a DualSense paired to it
 - Root access
 
