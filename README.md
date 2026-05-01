@@ -1,6 +1,6 @@
-# Waking PS5 from standby over Bluetooth on Linux
+# Waking PS5 over Bluetooth on Linux
 
-I wanted to wake my PS5 from standby via Bluetooth from a Linux machine, the same way a DualSense controller does it. Turns out this is possible without a controller — you just need to page the PS5 from the right Bluetooth address. The PS5 checks the source MAC of the incoming page against its list of paired controllers and wakes up if it matches, before any encryption or authentication happens.
+I wanted to power on my PS5 via Bluetooth from a Linux machine, the same way a DualSense controller does it. Turns out this is possible without a controller — you just need to page the PS5 from the right Bluetooth address. The PS5 checks the source MAC of the incoming page against its list of paired controllers and powers on if it matches, before any encryption or authentication happens. This works both from rest mode and when the console is fully powered off.
 
 The trick is documented in [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXonbt) and works fine on Broadcom and Intel adapters where you can freely change the BD_ADDR. The problem I ran into is that I only had a Realtek dongle (RTL8852BU), and BD_ADDR spoofing on Realtek under Linux is basically undocumented. This repo is about how I got it working.
 
