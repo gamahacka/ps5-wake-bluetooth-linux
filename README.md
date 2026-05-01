@@ -1,6 +1,6 @@
 # Waking PS5 over Bluetooth on Linux
 
-I wanted to power on my PS5 via Bluetooth from a Linux machine, the same way a DualSense controller does it. Turns out this is possible without a controller — you just need to page the PS5 from the right Bluetooth address. The PS5 checks the source MAC of the incoming page against its list of paired controllers and powers on if it matches, before any encryption or authentication happens. This works both from rest mode and when the console is fully powered off.
+I wanted to power on my PS5 via Bluetooth from a Linux machine, the same way a DualSense controller does it. Turns out this is possible without a controller. You just need to page the PS5 from the right Bluetooth address. The PS5 checks the source MAC of the incoming page against its list of paired controllers and powers on if it matches, before any encryption or authentication happens. This works both from rest mode and when the console is fully powered off.
 
 The trick is documented in [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXonbt) and works fine on Broadcom and Intel adapters where you can freely change the BD_ADDR. The problem I ran into is that I only had a Realtek dongle (RTL8852BU), and BD_ADDR spoofing on Realtek under Linux is basically undocumented. This repo is about how I got it working.
 
@@ -78,9 +78,9 @@ This only wakes the PS5. Full controller emulation is blocked by Sony's HID auth
 
 ## Links
 
-- [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXonbt) — the original PS5/PS4 wake tool, works on Broadcom and Intel
-- [btrtl.c](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/drivers/bluetooth/btrtl.c) — kernel driver that loads the config blob
-- [rtk_btusb vendor headers](https://github.com/96boards-akebi96/rtk_btusb/blob/master/rtk_btusb.h) — original Realtek struct definitions
+- [pywakepsXonbt](https://github.com/FreeTHX/pywakepsXonbt), the original PS5/PS4 wake tool, works on Broadcom and Intel
+- [btrtl.c](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/drivers/bluetooth/btrtl.c), the kernel driver that loads and forwards the config blob
+- [rtk_btusb vendor headers](https://github.com/96boards-akebi96/rtk_btusb/blob/master/rtk_btusb.h), original Realtek struct definitions
 
 ## Notes
 
